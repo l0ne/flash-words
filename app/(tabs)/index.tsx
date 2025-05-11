@@ -1,75 +1,83 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import { ArrowRight, Bookmark, RefreshCw } from 'lucide-react-native';
+import { StyleSheet } from 'react-native';
+import { Button, Card, H1, ScrollView, Text, XStack, YStack } from 'tamagui';
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import { SafeAreaView } from '@/components/SafeAreaView';
 
-export default function HomeScreen() {
+export default function CardsScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+    <SafeAreaView edges={['top']} style={styles.container}>
+      <ScrollView>
+        <YStack padding="$4" space="$4">
+          <H1>Cards</H1>
+          <Text>Review and learn new vocabulary with flashcards</Text>
+          
+          <Card elevate bordered size="$4" theme="blue" padding="$4" space="$3">
+            <Card.Header>
+              <Text fontSize="$5" fontWeight="bold">Continue Learning</Text>
+              <Text fontSize="$3" opacity={0.7}>Pick up where you left off</Text>
+            </Card.Header>
+            <Card.Footer>
+              <XStack space="$2" justifyContent="flex-end">
+                <Button iconAfter={ArrowRight} themeInverse>
+                  Continue
+                </Button>
+              </XStack>
+            </Card.Footer>
+          </Card>
+          
+          <Card elevate bordered size="$4" theme="dark" padding="$4" space="$3">
+            <Card.Header>
+              <Text fontSize="$5" fontWeight="bold">Daily Practice</Text>
+              <Text fontSize="$3" opacity={0.7}>20 cards • 5 minutes</Text>
+            </Card.Header>
+            <YStack space="$2" paddingHorizontal="$2">
+              <Text>Strengthen your memory with spaced repetition</Text>
+            </YStack>
+            <Card.Footer>
+              <XStack space="$2" justifyContent="flex-end">
+                <Button icon={RefreshCw} themeInverse>
+                  Start Practice
+                </Button>
+              </XStack>
+            </Card.Footer>
+          </Card>
+          
+          <Card elevate bordered size="$4" theme="light" padding="$4" space="$3">
+            <Card.Header>
+              <Text fontSize="$5" fontWeight="bold">Saved Words</Text>
+              <Text fontSize="$3" opacity={0.7}>Review words you've bookmarked</Text>
+            </Card.Header>
+            <Card.Footer>
+              <XStack space="$2" justifyContent="flex-end">
+                <Button icon={Bookmark} chromeless backgroundColor="$backgroundHover">
+                  View Saved
+                </Button>
+              </XStack>
+            </Card.Footer>
+          </Card>
+          
+          <Card elevate bordered size="$4" theme="dark" padding="$4" space="$3">
+            <Card.Header>
+              <Text fontSize="$5" fontWeight="bold">New Words</Text>
+              <Text fontSize="$3" opacity={0.7}>Discover and learn new vocabulary</Text>
+            </Card.Header>
+            <Card.Footer>
+              <XStack space="$2" justifyContent="flex-end">
+                <Button themeInverse>
+                  Explore
+                </Button>
+              </XStack>
+            </Card.Footer>
+          </Card>
+        </YStack>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  container: {
+    flex: 1,
   },
 });
