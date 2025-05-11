@@ -1,8 +1,30 @@
-# Welcome to your Expo app 👋
+# FlashWords 📱
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile application that enables users to quickly and effectively memorize foreign vocabulary using interactive flashcards and a modified SM-2 Spaced Repetition algorithm.
 
-## Get started
+![FlashWords App](docs/mascot.webp)
+
+## Overview
+
+FlashWords delivers:
+- One-tap study sessions with spaced repetition
+- Three learning modes (Learn, Review, Test)
+- Offline access to all content
+- Visual progress tracking
+- Customizable word sets
+
+For detailed information about the product vision, features, and roadmap, check out our [Product Requirements Document](docs/PRD.md).
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (LTS version recommended)
+- npm or yarn
+- Expo CLI
+- iOS Simulator or Android Emulator (optional)
+
+### Installation
 
 1. Install dependencies
 
@@ -16,35 +38,44 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+In the output, you'll find options to open the app in a:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [Expo Go](https://expo.dev/go)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Get a fresh project
+This project uses [file-based routing](https://docs.expo.dev/router/introduction) with files inside the **app** directory.
 
-When you're ready, run:
+## Development
+
+When you're ready to start from a clean slate:
 
 ```bash
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This command will move the starter code to the **app-example** directory and create a blank **app** directory.
 
-## Learn more
+## Technology Stack
 
-To learn more about developing your project with Expo, look at the following resources:
+- React Native 0.74 with Expo
+- Zustand for state management
+- Tamagui with NativeWind for UI components
+- WatermelonDB for local database
+- OpenAI API integration for advanced features
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Learn More
 
-## Join the community
+- [Expo documentation](https://docs.expo.dev/)
+- [React Native documentation](https://reactnative.dev/)
 
-Join our community of developers creating universal apps.
+## Contributing
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
