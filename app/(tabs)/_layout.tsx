@@ -28,6 +28,7 @@ export default function TabLayout() {
             backgroundColor: colorScheme === 'dark' ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.8)',
             borderTopWidth: 0.5,
             borderTopColor: colorScheme === 'dark' ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.2)',
+            paddingBottom: 10, // Add padding for home indicator
           },
           default: {
             backgroundColor: colorScheme === 'dark' ? '#121212' : '#FFFFFF',
