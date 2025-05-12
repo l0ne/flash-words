@@ -1,8 +1,8 @@
 import { ArrowRight, Bookmark, RefreshCw } from 'lucide-react-native';
 import { StyleSheet } from 'react-native';
 import { Button, Card, H1, ScrollView, Text, XStack, YStack } from 'tamagui';
-
 import { SafeAreaView } from '@/components/SafeAreaView';
+import MascotImage from '@/components/MascotImage';
 
 export default function CardsScreen() {
   return (
@@ -11,6 +11,8 @@ export default function CardsScreen() {
         <YStack padding="$4" space="$4">
           <H1>Cards</H1>
           <Text>Review and learn new vocabulary with flashcards</Text>
+
+          <MascotImage imageStyle={{ borderRadius: 10 }} width={200} height={200} />
           
           <Card elevate bordered size="$4" theme="blue" padding="$4" space="$3">
             <Card.Header>
