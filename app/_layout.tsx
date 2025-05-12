@@ -39,8 +39,9 @@ function RootLayout() {
     <TamaguiProvider config={tamaguiConfig} defaultTheme={colorScheme || 'light'}>
       <Theme name={colorScheme || 'light'}>
         <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-          <Stack>
+          <Stack initialRouteName="(onboarding)">
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="(onboarding)" options={{ headerShown: false }} />
             <Stack.Screen name="+not-found" />
           </Stack>
         </ThemeProvider>
