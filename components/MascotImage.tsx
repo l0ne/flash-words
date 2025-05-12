@@ -39,7 +39,7 @@ export function MascotImage({
   return (
     <ThemedView style={[styles.container, containerStyle]}>
       <Image
-        source={require('../docs/mascot.webp')}
+        source={require('../assets/images/mascot.webp')}
         style={[
           styles.image,
           {
