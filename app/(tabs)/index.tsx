@@ -1,4 +1,5 @@
 import { ArrowRight, Book, Plus } from 'lucide-react-native';
+import { useRouter } from 'expo-router';
 import { StyleSheet, Animated, View, Dimensions } from 'react-native';
 import { 
   Button, 
@@ -19,6 +20,8 @@ import { SafeAreaView } from '@/components/SafeAreaView';
  * and in-progress word sets
  */
 export default function HomeScreen() {
+  const router = useRouter();
+
   // Sets that are in progress (to be replaced with actual data)
   const inProgressSets = [
     { id: '1', title: 'Basic Phrases', progress: 12, total: 30 },
@@ -74,6 +77,7 @@ export default function HomeScreen() {
             marginTop="$4" 
             icon={Book}
             scale={1.1}
+            onPress={() => router.push('/(study)/flashcard')}
           >
             Learn
           </Button>
